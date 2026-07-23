@@ -1,7 +1,9 @@
-.build/
-.swiftpm/
-Package.resolved
-artifacts/
-*.png
-*.tiff
-.DS_Store
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
