@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nyx-semantic"
+version = "0.1.0"
+description = "Semantic element location without CSS selectors — TF-IDF embeddings + cosine similarity + self-healing across page redesigns."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "Apache-2.0"}
+authors = [{name = "overandor"}]
+keywords = ["nyx", "semantic", "tf-idf", "cosine-similarity", "self-healing", "browser-automation", "dom", "element-location", "no-selectors"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Internet :: WWW/HTTP :: Browsers",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov>=5", "ruff>=0.6", "mypy>=1.11", "build>=1.2", "twine>=5"]
+browser = ["playwright>=1.40"]
+
+[project.scripts]
+nyx = "nyx.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/overandor/nyx-semantic"
+Repository = "https://github.com/overandor/nyx-semantic"
+Issues = "https://github.com/overandor/nyx-semantic/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nyx"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
