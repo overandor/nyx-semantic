@@ -1,6 +1,5 @@
 """Tests for TF-IDF engine."""
 
-import math
 from nyx.tfidf import TFIDFEngine
 
 
@@ -40,12 +39,14 @@ def test_vocabulary_building():
 
 def test_tfidf_vector_dim():
     engine = TFIDFEngine()
-    engine.build_vocabulary([
-        "email password login",
-        "email username",
-        "password confirm",
-        "login submit button",
-    ])
+    engine.build_vocabulary(
+        [
+            "email password login",
+            "email username",
+            "password confirm",
+            "login submit button",
+        ]
+    )
     vec = engine.tfidf_vector("email password")
     assert len(vec) == engine.vocab_size
 
@@ -60,13 +61,16 @@ def test_tfidf_vector_empty_doc():
 def test_tfidf_similarity():
     """Similar documents should have positive cosine similarity."""
     from nyx.similarity import cosine_similarity
+
     engine = TFIDFEngine()
-    engine.build_vocabulary([
-        "email password login",
-        "email username",
-        "password confirm",
-        "login submit button",
-    ])
+    engine.build_vocabulary(
+        [
+            "email password login",
+            "email username",
+            "password confirm",
+            "login submit button",
+        ]
+    )
     vec1 = engine.tfidf_vector("email password")
     vec2 = engine.tfidf_vector("email login")
     sim = cosine_similarity(vec1, vec2)

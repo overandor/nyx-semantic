@@ -1,6 +1,5 @@
 """Tests for cosine similarity and vector math."""
 
-import math
 from nyx.similarity import cosine_similarity, euclidean_distance
 
 

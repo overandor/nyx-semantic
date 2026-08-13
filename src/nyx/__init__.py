@@ -27,7 +27,7 @@ from .embedder import SemanticEmbedder
 from .similarity import cosine_similarity
 from .locator import SemanticLocator, SemanticMatch
 
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 __all__ = [
     "DOMElement",
     "extract_dom_js",

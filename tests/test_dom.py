@@ -1,6 +1,5 @@
 """Tests for DOM element dataclass."""
 
-import json
 from nyx.dom import DOMElement, extract_dom_js
 
 
@@ -49,9 +48,16 @@ def test_extract_dom_js():
 
 def test_dom_element_dataclass():
     el = DOMElement(
-        index=0, tag="h1", text="Hello",
-        depth=1, sibling_index=0, child_count=0,
-        x=10, y=20, width=100, height=30,
+        index=0,
+        tag="h1",
+        text="Hello",
+        depth=1,
+        sibling_index=0,
+        child_count=0,
+        x=10,
+        y=20,
+        width=100,
+        height=30,
     )
     assert el.tag == "h1"
     assert el.text == "Hello"

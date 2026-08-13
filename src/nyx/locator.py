@@ -89,15 +89,25 @@ class SemanticLocator:
         wants_content = any(
             w in lower_intent
             for w in (
-                "name", "text", "title", "heading", "review",
-                "description", "profile", "therapist",
+                "name",
+                "text",
+                "title",
+                "heading",
+                "review",
+                "description",
+                "profile",
+                "therapist",
             )
         )
         wants_input = any(
             w in lower_intent
             for w in (
-                "input", "field", "search", "form",
-                "password", "email",
+                "input",
+                "field",
+                "search",
+                "form",
+                "password",
+                "email",
             )
         )
         wants_link = any(w in lower_intent for w in ("link", "navigation", "anchor"))
@@ -202,11 +212,7 @@ class SemanticLocator:
         # Same element if text overlaps or tag matches.
         same = bool(
             before_text
-            and (
-                after_text in before_text
-                or before_text in after_text
-                or after_tag == before_tag
-            )
+            and (after_text in before_text or before_text in after_text or after_tag == before_tag)
         )
 
         return (before_score, after_score, same)

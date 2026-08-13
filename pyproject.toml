@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "nyx-semantic"
-version = "0.1.0"
+version = "1.0.0"
 description = "Semantic element location without CSS selectors — TF-IDF embeddings + cosine similarity + self-healing across page redesigns."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -12,7 +12,7 @@ license = {text = "Apache-2.0"}
 authors = [{name = "overandor"}]
 keywords = ["nyx", "semantic", "tf-idf", "cosine-similarity", "self-healing", "browser-automation", "dom", "element-location", "no-selectors"]
 classifiers = [
-  "Development Status :: 4 - Beta",
+  "Development Status :: 5 - Production/Stable",
   "Intended Audience :: Developers",
   "License :: OSI Approved :: Apache Software License",
   "Programming Language :: Python :: 3",

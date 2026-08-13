@@ -39,22 +39,34 @@ class SemanticEmbedder:
     """
 
     # Feature weights — tuned empirically from Swift implementation.
-    W_TEXT_TFIDF: float = 3.0       # text content is primary signal
-    W_ATTR_TFIDF: float = 2.0       # attribute text (aria-label, placeholder)
-    W_CONTEXT_TFIDF: float = 1.0    # ancestor text provides context
-    W_TAG_MATCH: float = 1.5        # tag name matching
-    W_DEPTH: float = 0.3            # depth as positional signal
-    W_POSITION: float = 0.2         # x, y position
-    W_SIZE: float = 0.1             # width, height
-    W_VISIBILITY: float = 0.5       # visible elements preferred
-    W_CHILD_COUNT: float = 0.1      # container vs leaf
+    W_TEXT_TFIDF: float = 3.0  # text content is primary signal
+    W_ATTR_TFIDF: float = 2.0  # attribute text (aria-label, placeholder)
+    W_CONTEXT_TFIDF: float = 1.0  # ancestor text provides context
+    W_TAG_MATCH: float = 1.5  # tag name matching
+    W_DEPTH: float = 0.3  # depth as positional signal
+    W_POSITION: float = 0.2  # x, y position
+    W_SIZE: float = 0.1  # width, height
+    W_VISIBILITY: float = 0.5  # visible elements preferred
+    W_CHILD_COUNT: float = 0.1  # container vs leaf
 
     # Tag importance weights — some tags carry more semantic weight.
     TAG_WEIGHTS: Dict[str, float] = {
-        "input": 2.0, "button": 2.0, "a": 1.8, "textarea": 2.0,
-        "select": 2.0, "form": 1.5, "label": 1.5, "h1": 1.3,
-        "h2": 1.2, "h3": 1.1, "img": 1.2, "title": 1.5,
-        "span": 0.8, "div": 0.5, "p": 1.0, "li": 0.9,
+        "input": 2.0,
+        "button": 2.0,
+        "a": 1.8,
+        "textarea": 2.0,
+        "select": 2.0,
+        "form": 1.5,
+        "label": 1.5,
+        "h1": 1.3,
+        "h2": 1.2,
+        "h3": 1.1,
+        "img": 1.2,
+        "title": 1.5,
+        "span": 0.8,
+        "div": 0.5,
+        "p": 1.0,
+        "li": 0.9,
     }
 
     # Semantic synonym groups for query expansion.
